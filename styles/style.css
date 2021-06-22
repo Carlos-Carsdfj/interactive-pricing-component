@@ -1,0 +1,187 @@
+:root{
+
+    --thumb-color:hsl(204, 89%, 57%);
+    --thumb-active-color:hsl(204, 93%, 39%);
+
+    --background-color:#eee;
+  
+    
+  
+
+}
+body{
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* le damos tamaño al input y lo colocamos block para que se comporte como un elemento normal en el html estilo
+un div y que agarre el margin automatico */
+#range-input{
+    width: 250px;
+    margin: 100px auto;
+    position: relative;
+    display: block;
+}
+/*quitamos las configuraciones por defecto como viene en el explorador para cuando se selecciona el boton del 
+slider no coloque ninguna sombra en el caso de opera es de color azul*/
+#range-input:focus {
+    outline: none;
+  }
+
+
+/*quitamos el resto de apariencia por defecto que coloca el navegador */
+#range-input,
+#range-input::-webkit-slider-runnable-track,
+#range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+/* el Thumb es el boton de la barra de desplazamiento como ya quitamos los cambios por defecto que trae el explorador 
+podemos agregar nuestros propios estilos*/
+#range-input::-webkit-slider-thumb {
+    background-color: var(--thumb-color);
+    width: 50px;
+    height: 50px;
+    background-image: url('../resource/icon-slider.svg');
+    background-repeat: no-repeat;
+    border: 3px solid var(--background-color);
+    background-position: center center;
+    background-size: 80%;
+    border-radius: 50%;
+    margin-top: -20px;
+    cursor: grab;
+  }
+
+  #range-input::-webkit-slider-thumb:hover{
+    box-shadow: 0 0 20px var(--thumb-color);
+    
+  }
+  #range-input::-webkit-slider-thumb:active{
+    background-color: var(--thumb-active-color);
+    cursor: grabbing;
+  }
+
+
+
+/* Firefox*/
+  input[type=range]::-moz-range-thumb {
+    background-color: var(--thumb-color);
+    width: 50px;
+    height: 50px;
+    background-image: url('../resource/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 3px solid var(--background-color);
+    background-size: 80%;
+    border-radius: 50%;
+    margin-top: -20px;
+  }
+/*   
+  #range-input::-moz-range-thumb:hover{
+
+  
+  } */
+
+
+
+  /* barra de desplazamiento*/
+input[type=range]::-webkit-slider-runnable-track {
+    background-color: var(--thumb-color);
+    height: 10px;
+    border-radius:20px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+  }
+
+/* barra de desplazamiento en firefox*/
+  input[type=range]::-moz-range-track {
+    background-color:var(--thumb-color);
+    height: 10px;
+    border-radius:20px;
+  }
+  
+
+  /* input[type=range]::-ms-track {
+    background-color: #777;
+    height: 10px;
+    border-radius:20px;
+  } */
+
+
+  /* switch  */
+
+  #label-switch{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    
+    border-radius: 20px;
+    cursor: pointer;
+    background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+    transition: all 0.3s;
+  }
+  #discount-checkbox{
+      display: none;
+  }
+
+  #span-checkbox{
+    left: 1px;
+    top: auto;
+    bottom: auto;
+    width: 29px;
+    height: 29px;
+    background: var(--background-color);
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateX(0px);
+    position: relative;
+    transition: transform 1s;
+  
+  }
+
+  .content-checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+
+  }
+  #descount-tick{
+    background: rgba(250, 22, 22, 0.315);
+    color: rgb(247, 8, 8);
+    font-weight: bold;
+      border-radius: 5px;
+      padding: 2px 10px;
+  }
+  
+  #discount-checkbox:checked + #label-switch {
+    transition: all 0.3s;
+    background:green;
+    
+  }
+  #discount-checkbox:checked ~ #label-switch #span-checkbox {
+
+    transform: translateX(70px);
+    
+    
+  }
+   
+  #discount-checkbox:checked + #descount-tick{
+
+   
+   
+    
+    
+  }
+   
+  
+
