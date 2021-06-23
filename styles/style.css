@@ -11,13 +11,25 @@
 
 }
 body{
-    background-color: var(--background-color);
+    
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
     display: grid;
     place-items: center;
     height: 100vh;
+    background: #EFEFBB;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+h1{
+  margin: 0;
+}
+h4{
+  margin: 0 0 10px 0;
+  color: #7c7c7c;
 }
 
 
@@ -31,7 +43,7 @@ body{
  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
  display: flex;
  flex-direction: column;
-
+  background-color:var(--background-color) ;
 }
 
   
@@ -213,13 +225,17 @@ input[type=range]::-webkit-slider-runnable-track {
     
 
   }
-  #descount-tick{
+  .discount{
     background: rgba(250, 22, 22, 0.315);
     color: rgb(247, 8, 8);
     font-weight: bold;
       border-radius: 5px;
       padding: 2px 10px;
   }
+  .short{
+    display: none;
+  }
+  
   
   #discount-checkbox:checked + #label-switch {
     transition: all 0.3s;
@@ -282,3 +298,73 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
 
+@media all and (max-width:600px){
+
+  .prices-content{
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+    grid-template-areas:
+    "views views views views "
+    "range range range range "
+    "price  price price price"   
+  }
+  
+  .checkbox-content{
+  
+    font-size: 11px;
+
+  }
+ 
+  #label-switch{
+    position: relative;
+    width: 50px;
+    height: 25px;
+   
+  }
+  .long{
+    display:none
+  }
+  .short{
+    display:block
+  }
+  .discount{
+   padding: 1px 1px;
+   text-align: center;
+
+  }
+
+  #span-checkbox{
+   
+    width: 19px;
+    height: 19px;
+   
+  
+  }
+
+
+  #discount-checkbox:checked ~ #label-switch #span-checkbox {
+
+    transform: translateX(30px);
+    
+    
+  }
+
+
+
+
+}
+
+@media all and (max-width:500px) {
+  .start-button-content{
+    flex-direction: column;
+  }
+  h1{
+    font-size: 20px;
+  }
+  h4{
+    font-size: 12px;
+    text-align: center;
+
+  }
+  
+}
