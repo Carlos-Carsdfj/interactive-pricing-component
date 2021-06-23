@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class='card'>
+        
+        <div class='prices-content'>
 
-    <label class='price-mounth'></label> 
-    <br>
-    <br>
-    <label for="range-input" class='label-range'></label>
-    <br>
-    <input id='range-input' type="range" value='2' min='0' max='4'>
-    
-    
-    
-        <div class='content-checkbox'>
+            <span class='views-span'><label for="range-input" class='label-range'></label> PageViews</span>
+            <span class='price-span' >$<label class='price-mounth'></label>/<p id='tag-cycle'></p></span>
+           
+           
+            <input id='range-input' type="range" value='2' min='0' max='4'>
+            
+        </div>
+        
+        
+        <div class='checkbox-content'>
             <p>
                 Monthly Billing
+                
             </p>
             <input type="checkbox" id="discount-checkbox">
             <label for="discount-checkbox" id='label-switch'>
@@ -29,17 +36,27 @@
             </label>
             <p>
                 Yearly Billing
-           
+        
                 <span id='descount-tick'>
                     25% discount
                 </span>
             </p>
 
-        </div>
+            </div>
+            <hr class='h-line'></hr>  
+            <div class='start-button-content'>
+                <ul class='list-benefits'>
+                    <li>Unlimited websities</li>
+                    <li>100% data ownership</li>
+                    <li> Email reports</li>
+                </ul>
 
-    <br>
-    <br>
-    
+                <button id='start-button'>Start my trial</button>
+                
+            </div>
+            
+            
+        </div>
     <script src="./js/script.js"></script>
 
 </body>
