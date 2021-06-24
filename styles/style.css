@@ -29,7 +29,7 @@ h1{
 }
 h4{
   margin: 0 0 10px 0;
-  color: #7c7c7c;
+  color: #D4D3DD;
 }
 
 
@@ -83,7 +83,8 @@ un div y que agarre el margin automatico */
     
     position: relative;
     display: block;
-  grid-area: range;
+    grid-area: range;
+    background-color: transparent;
 
 }
 .views-span{
@@ -129,6 +130,14 @@ podemos agregar nuestros propios estilos*/
     background-color: var(--thumb-active-color);
     cursor: grabbing;
   }
+  #range-input::-moz-range-thumb:hover{
+    box-shadow: 0 0 20px var(--thumb-color);
+    
+  }
+  #range-input::-moz-range-thumb:active{
+    background-color: var(--thumb-active-color);
+    cursor: grabbing;
+  }
 
 
 
@@ -140,42 +149,55 @@ podemos agregar nuestros propios estilos*/
     background-image: url('../resource/icon-slider.svg');
     background-repeat: no-repeat;
     background-position: center center;
-    border: 3px solid var(--background-color);
+    border: 1px solid rgba(0, 0, 0, 0.582);
     background-size: 80%;
     border-radius: 50%;
     margin-top: -20px;
+    cursor: grab;
+    
   }
-/*   
-  #range-input::-moz-range-thumb:hover{
-
-  
-  } */
-
 
 
   /* barra de desplazamiento*/
 input[type=range]::-webkit-slider-runnable-track {
     background-color: var(--thumb-color);
     height: 10px;
-    border-radius:20px;
+    border-radius:10px;
   }
-  input[type=range]:focus::-webkit-slider-runnable-track {
+  /* input[type=range]:focus::-webkit-slider-runnable-track {
     outline: none;
+  } */
+/* barra de desplazamiento en  chrome*/
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    
+   
+    
   }
+
+
+}
 
 /* barra de desplazamiento en firefox*/
   input[type=range]::-moz-range-track {
-    background-color:var(--thumb-color);
+    background-color:var(--background-color);
     height: 10px;
-    border-radius:20px;
+    border: 1px solid rgba(0, 0, 0, 0.514);
+    border-radius: 10px;
+   
   }
-  
-
-  /* input[type=range]::-ms-track {
-    background-color: #777;
+  input[type="range"]::-moz-range-progress {
+    background: var(--thumb-color); 
     height: 10px;
-    border-radius:20px;
-  } */
+    border: 1px solid rgba(0, 0, 0, 0.514);
+    border-radius: 10px;
+    
+
+  }
+ 
+
+  
 
 
 
